@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 3fcd9ed220b73f34bbc4eb8fc31cca3b
+timeCreated: 1525346619
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Edge
+    100004: Ground
+    100006: Railing1
+    100008: Railing2E
+    100010: Railing2O
+    100012: Railing3
+    100014: Railing4
+    100016: Railing_Edge
+    100018: Ramp0
+    100020: Ramp1
+    100022: Ramp2
+    100024: Wall0
+    100026: Wall1
+    100028: Wall2E
+    100030: Wall2O
+    100032: Wall3
+    100034: Wall4
+    100036: Ground.001
+    400000: //RootNode
+    400002: Edge
+    400004: Ground
+    400006: Railing1
+    400008: Railing2E
+    400010: Railing2O
+    400012: Railing3
+    400014: Railing4
+    400016: Railing_Edge
+    400018: Ramp0
+    400020: Ramp1
+    400022: Ramp2
+    400024: Wall0
+    400026: Wall1
+    400028: Wall2E
+    400030: Wall2O
+    400032: Wall3
+    400034: Wall4
+    400036: Ground.001
+    2100000: Material
+    2100002: Mat_glow
+    2300000: Edge
+    2300002: Ground
+    2300004: Railing1
+    2300006: Railing2E
+    2300008: Railing2O
+    2300010: Railing3
+    2300012: Railing4
+    2300014: Railing_Edge
+    2300016: Ramp0
+    2300018: Ramp1
+    2300020: Ramp2
+    2300022: Wall0
+    2300024: Wall1
+    2300026: Wall2E
+    2300028: Wall2O
+    2300030: Wall3
+    2300032: Wall4
+    2300034: Ground.001
+    3300000: Edge
+    3300002: Ground
+    3300004: Railing1
+    3300006: Railing2E
+    3300008: Railing2O
+    3300010: Railing3
+    3300012: Railing4
+    3300014: Railing_Edge
+    3300016: Ramp0
+    3300018: Ramp1
+    3300020: Ramp2
+    3300022: Wall0
+    3300024: Wall1
+    3300026: Wall2E
+    3300028: Wall2O
+    3300030: Wall3
+    3300032: Wall4
+    3300034: Ground.001
+    4300000: Wall4
+    4300002: Edge
+    4300004: Wall1
+    4300006: Wall2E
+    4300008: Wall2O
+    4300010: Wall3
+    4300012: Ramp0
+    4300014: Ramp1
+    4300016: Ramp2
+    4300018: Railing_Edge
+    4300020: Railing1
+    4300022: Railing2E
+    4300024: Railing2O
+    4300026: Railing3
+    4300028: Railing4
+    4300030: Ground
+    4300032: Wall0
+    4300034: Ground.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_glow
+    second: {fileID: 2100000, guid: 2e72822e5a75bce46b35fa8012ca281c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 025a95fdda2f42f4798646121d38ed88, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
