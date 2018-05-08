@@ -24,6 +24,8 @@ ModelImporter:
     100032: Wall3
     100034: Wall4
     100036: Ground.001
+    100038: Railing3.001
+    100040: Railing2Ex
     400000: //RootNode
     400002: Edge
     400004: Ground
@@ -43,6 +45,8 @@ ModelImporter:
     400032: Wall3
     400034: Wall4
     400036: Ground.001
+    400038: Railing3.001
+    400040: Railing2Ex
     2100000: Material
     2100002: Mat_glow
     2300000: Edge
@@ -63,6 +67,8 @@ ModelImporter:
     2300030: Wall3
     2300032: Wall4
     2300034: Ground.001
+    2300036: Railing3.001
+    2300038: Railing2Ex
     3300000: Edge
     3300002: Ground
     3300004: Railing1
@@ -81,6 +87,8 @@ ModelImporter:
     3300030: Wall3
     3300032: Wall4
     3300034: Ground.001
+    3300036: Railing3.001
+    3300038: Railing2Ex
     4300000: Wall4
     4300002: Edge
     4300004: Wall1
@@ -99,12 +107,19 @@ ModelImporter:
     4300030: Ground
     4300032: Wall0
     4300034: Ground.001
+    4300036: Railing3.001
+    4300038: Railing2Ex
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_glow
     second: {fileID: 2100000, guid: 2e72822e5a75bce46b35fa8012ca281c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_glow_gound
+    second: {fileID: 2100000, guid: f6a0ea207bc2bc042ade8a258f43ccf9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
