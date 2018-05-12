@@ -9,6 +9,7 @@ ModelImporter:
     400000: //RootNode
     2100000: Base
     2100002: Mat_glow
+    2100004: Mat_glow_gound
     2300000: //RootNode
     3300000: //RootNode
     4300000: Wall2O
