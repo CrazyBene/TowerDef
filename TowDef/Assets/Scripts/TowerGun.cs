@@ -5,9 +5,18 @@ using UnityEngine;
 public class TowerGun : MonoBehaviour {
 
 	[SerializeField]
+	private float range = 10;
+
+	[SerializeField]
 	private Transform gunOrigin;
 
 	private List<GameObject> enemiesInRange = new List<GameObject>();
+
+	public void Awake() {
+		SphereCollider rangeTrigger = gameObject.AddComponent<SphereCollider>();
+		rangeTrigger.isTrigger = true;
+		rangeTrigger.radius = 10;		
+	}
 
 	public void Update() {
 
@@ -61,6 +70,13 @@ public class TowerGun : MonoBehaviour {
 
 			return closestEnemy;
 		}
+	}
+
+
+	// Draw method for range indicator
+	public void OnDrawGizmosSelected() {
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere(transform.position, range);
 	}
 
 }
