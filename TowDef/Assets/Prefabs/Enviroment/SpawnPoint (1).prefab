@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4850782752950112}
   - component: {fileID: 33627426371921968}
   - component: {fileID: 23620965846148458}
+  - component: {fileID: 64630364532045892}
   m_Layer: 8
   m_Name: SpawnPoint (1)
   m_TagString: Untagged
@@ -83,4 +84,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1360795246603034}
+  m_Mesh: {fileID: 4300000, guid: 8bc945db0c2993c4db17bcc9fdb4fc2b, type: 3}
+--- !u!64 &64630364532045892
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360795246603034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8bc945db0c2993c4db17bcc9fdb4fc2b, type: 3}

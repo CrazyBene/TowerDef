@@ -181,6 +181,7 @@ Assets/_MK/MKGlowFree/MKGlowFree.cs
 Assets/Scripts/LevelBuilder.cs
 Assets/Scripts/LevelBuilderEditor.cs
 Assets/Scripts/TowerGun.cs
+Assets/Scripts/TuerretPlacer.cs
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"
