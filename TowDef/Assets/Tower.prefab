@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4270525560059096}
   - component: {fileID: 33015898092120378}
-  - component: {fileID: 65474301842253326}
   - component: {fileID: 23343299450863146}
   m_Layer: 0
   m_Name: Gfx
@@ -37,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4379695578611524}
+  - component: {fileID: 65070671364650544}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -112,15 +112,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651791298286646}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65474301842253326
+--- !u!65 &65070671364650544
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1651791298286646}
+  m_GameObject: {fileID: 1685279310253266}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}

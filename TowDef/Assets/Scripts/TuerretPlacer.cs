@@ -51,7 +51,9 @@ public class TuerretPlacer : MonoBehaviour {
 
 	private void ReleaseIfClicked() {
 		if(Input.GetMouseButtonDown(0)) {
-			currentTurret.GetComponent<BoxCollider>().enabled = true;
+			foreach(MeshCollider col in currentTurret.GetComponentsInChildren<MeshCollider>()) {
+				col.enabled = true;
+			}
 			currentTurret = null;
 		}
 	}
