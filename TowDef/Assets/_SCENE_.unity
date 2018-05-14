@@ -61383,84 +61383,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4945941419357164, guid: 0b65c8317098e704d89810c4cbac59ec,
     type: 2}
   m_PrefabInternal: {fileID: 938452077}
---- !u!1001 &1174656503
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Name
-      value: Tower (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Name
-      value: Base
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Name
-      value: Fire Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 881751dafce05be469498142e1a0673d, type: 2}
-    - target: {fileID: 2300002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: f02689e66a493e4469553820bc7a84dd, type: 2}
-    - target: {fileID: 100002, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a28ab19ae17a2734c803bab9fb92f67d, type: 2}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2bc334bcc3248cf4da64ced80a40bad9, type: 3}
-  m_IsPrefabParent: 0
 --- !u!4 &1175598560 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4614894497534284, guid: 8bf82ec668dad5d4fa5c083f7ed58077,
@@ -77150,7 +77072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96c4c36251b2f341a591eedf1b6772c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 1685279310253266, guid: d8e8ae25861d5c941a384febfdcbdb49,
+  turretPrefab: {fileID: 1767328342497852, guid: db0059d912c4d4b45927eab4e43c22d5,
     type: 2}
   turretHotkey: 49
 --- !u!1001 &1458364936

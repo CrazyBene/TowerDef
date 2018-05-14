@@ -59,6 +59,7 @@ public class TowerGun : MonoBehaviour {
 				float dist = dir.magnitude;
 				if(dist < closestDist) {
 					RaycastHit hit;
+					// This part has problem with the tower model
 					if(Physics.Raycast(gunOrigin.transform.position, dir, out hit, Mathf.Infinity)) {
 						if(hit.collider.gameObject == enemy) {
 							closestEnemy = enemy;

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MKDemoMat1View1
+  m_Name: EdgeGlowBlue
   m_Shader: {fileID: 4800000, guid: 3f387b3c7760d5a488b5596b42425701, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -32,5 +32,5 @@ Material:
     - _MKGlowTexStrength: 10
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _MKGlowColor: {r: 0, g: 0.5448277, b: 1, a: 1}
-    - _MKGlowTexColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MKGlowColor: {r: 0, g: 0.8745098, b: 1, a: 1}
+    - _MKGlowTexColor: {r: 0, g: 0.8745099, b: 1, a: 1}
