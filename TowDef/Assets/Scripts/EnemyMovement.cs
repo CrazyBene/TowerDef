@@ -5,14 +5,11 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour {
 
-	public Transform destination;
-
 	private NavMeshAgent agent;
 
 	// Use this for initialization
 	void Awake () {
-		agent = GetComponent<NavMeshAgent>();	
-		agent.destination = destination.position;
+		agent = GetComponent<NavMeshAgent>();
 	}
 	
 	// Update is called once per frame
@@ -22,5 +19,9 @@ public class EnemyMovement : MonoBehaviour {
 			return;
 		}
 	}
+
+	public void SetDestination(Transform destination) {
+		agent.destination = destination.position;
+	} 
 
 }
