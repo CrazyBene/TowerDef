@@ -29,17 +29,11 @@ public class Tower : MonoBehaviour {
 
 	public LayerMask layerMask;
 
-
-
 	private List<GameObject> enemiesInRange = new List<GameObject>();
-
-	public void Awake() {
-		SphereCollider rangeTrigger = gameObject.AddComponent<SphereCollider>();
-		rangeTrigger.isTrigger = true;
-		rangeTrigger.radius = 10;		
-	}
+	private List<GameObject> enemiesToRemove = new List<GameObject>();
 
 	public void Update() {
+		CheckEnemiesStillInRange();
 
 		if(fireCountdown > 0f)
 			fireCountdown -= Time.deltaTime;
@@ -61,6 +55,19 @@ public class Tower : MonoBehaviour {
 			Shoot();
 			fireCountdown = 1f / fireRate;
 		}
+	}
+
+	private void CheckEnemiesStillInRange() {
+		// Delete enemy from list if it is gone somehow(died)
+		foreach(GameObject enemy in enemiesInRange) {
+			if(enemy == null) {
+				enemiesToRemove.Add(enemy);
+			}
+		}
+		foreach(GameObject enemy in enemiesToRemove) {
+			enemiesInRange.Remove(enemy);
+		}
+		enemiesToRemove.Clear();
 	}
 
 	private void Shoot() {
@@ -98,12 +105,18 @@ public class Tower : MonoBehaviour {
 			enemiesInRange.Remove(enemy);
 	}
 
+
 	GameObject closestEnemy {
 		get {
 			float closestDist = float.MaxValue;
 			GameObject closestEnemy = null;
 
 			foreach(GameObject enemy in enemiesInRange) {
+				// Ignore enemy if it has been removed somehow
+				if(enemy == null){
+					continue;
+				}
+
 				float dist = (enemy.transform.position - transform.position).magnitude;
 				Vector3 dir = enemy.transform.position - firePoint.transform.position;
 				if(dist < closestDist) {

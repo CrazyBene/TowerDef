@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour {
 
 	[SerializeField]
 	private float speed = 70f;
+	[SerializeField]
+	private float damage = 5f;
 	
 	public void Seek(Transform target) {
 		this.target = target;
@@ -32,15 +34,19 @@ public class Bullet : MonoBehaviour {
 		
 	}
 
-	private void HitTarget() {
+	private void HitTarget(GameObject target) {
+		// Destroy the bullet itself
 		Destroy(gameObject);
+
+		// Do damage to the enemy
+		Enemy enemy = target.GetComponent<Enemy>();
+		enemy.TakeDamage(damage);
 	}
 
 	public void OnTriggerEnter(Collider collider) {
 		GameObject go = collider.gameObject;
 		if(go.CompareTag("Enemy")) {
-			Destroy(gameObject);
-			Debug.Log("HIT");
+			HitTarget(go.transform.parent.gameObject);
 		}
 	}
 
