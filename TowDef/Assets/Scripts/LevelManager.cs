@@ -3,34 +3,59 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+// TODO: Take all UI Stuff and move it to an extra file
 public class LevelManager : MonoBehaviour {
 
 	[SerializeField]
 	private Spawner[] spawners;
 
 	[SerializeField]
-	private TextMeshProUGUI waveCounter;
-
-	[SerializeField]
 	private int maxWaves = 1;
 
 	private int currentWave = 0;
 	
+	// Some UI Elements
+	[SerializeField]
+	private TextMeshProUGUI waveCounter;
+
+	[SerializeField]
+	private GameObject startNextWaveHint; 
+
 	// At the moment for debugging
 	public TextMeshProUGUI phaseText;
 	
 	private LevelPhase levelPhase = LevelPhase.BuildPhase;
+	// Automatic call the start function of each phase
+	private LevelPhase Phase {
+		get {
+			return levelPhase;
+		}
+		set {
+			switch(value) {
+			case LevelPhase.BuildPhase: 
+				StartBuildPhase();
+				break;
+			case LevelPhase.WavePhase: 
+				StartNextWavePhase();
+				break;
+			case LevelPhase.EndPhase: 
+				StartEndPhase();
+				break;
+		}
+			levelPhase = value;
+		}
+	}
 
 	private void Awake() {
-		UpdateUI();
+		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
+
+		phaseText.color = new Color(phaseText.color.r, phaseText.color.g, phaseText.color.b, 0f);
+		Phase = LevelPhase.BuildPhase;
 	}
 
 
-	private void Update () {
-		
-		UpdateUI();
-		
-		switch(levelPhase) {
+	private void Update () {		
+		switch(Phase) {
 			case LevelPhase.BuildPhase: 
 				UpdateBuildPhase();
 				break;
@@ -47,11 +72,7 @@ public class LevelManager : MonoBehaviour {
 	private void UpdateBuildPhase() {
 		// If the player presses 'G' the build phase ends and the wave starts spawning
 		if(Input.GetKeyDown(KeyCode.G)) {
-			levelPhase = LevelPhase.WavePhase;
-			currentWave++;
-			foreach(Spawner spawner in spawners) {
-				StartCoroutine(spawner.SpawnWave(currentWave));
-			}
+			Phase = LevelPhase.WavePhase;
 		}
 	}
 
@@ -59,12 +80,14 @@ public class LevelManager : MonoBehaviour {
 	private float nextSpawn = 2f;
 	private float spawnTime = 20f;
 	private void UpdateWavePhase() {
-		// TODO: Still need to detect if all enemies are destroyed
-		if(!spawningEnemies) {
+		// Not the best way to detect no enemies, but it works ok
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+		if(!SpawningEnemies && enemies.Length == 0) {
 			if(currentWave == maxWaves) 
-				levelPhase = LevelPhase.EndPhase;
+				Phase = LevelPhase.EndPhase;
 			else
-				levelPhase = LevelPhase.BuildPhase;
+				Phase = LevelPhase.BuildPhase;			
 		}
 
 		// If the nexus gets destroyed go to the endphase
@@ -74,8 +97,32 @@ public class LevelManager : MonoBehaviour {
 		// If the player wants to end this level he can proceed to the menu?
 	}
 
-	
-	private bool spawningEnemies {
+	private void StartBuildPhase() {
+		startNextWaveHint.SetActive(true);
+
+		phaseText.text = "Build";
+		StartCoroutine(FadeInAndOut(1f, phaseText));
+	}
+
+	private void StartNextWavePhase() {
+		currentWave++;
+		foreach(Spawner spawner in spawners) {
+			StartCoroutine(spawner.SpawnWave(currentWave));
+		}
+		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
+		startNextWaveHint.SetActive(false);
+
+		phaseText.text = "Wave";
+		StartCoroutine(FadeInAndOut(1f, phaseText));
+	}
+
+	private void StartEndPhase() {
+		phaseText.text = "End";
+		StartCoroutine(FadeInAndOut(1f, phaseText));
+	}
+
+
+	private bool SpawningEnemies {
 		get {
 			foreach(Spawner spawner in spawners) {
 				if(spawner.Spawning)
@@ -85,21 +132,41 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	private void UpdateUI() {
-		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
+	private IEnumerator FadeInAndOut(float t, TextMeshProUGUI i) {
+		i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
+        while (i.color.a < 1.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
+            yield return null;
+        }
 
-		switch(levelPhase) {
-			case LevelPhase.BuildPhase: 
-				phaseText.text = "Build";
-				break;
-			case LevelPhase.WavePhase: 
-				phaseText.text = "Wave";
-				break;
-			case LevelPhase.EndPhase: 
-				phaseText.text = "End";
-				break;
-		}
+		yield return 3f;
+
+		i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
+        while (i.color.a > 0.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
 	}
+
+	private IEnumerator FadeTextToFullAlpha(float t, TextMeshProUGUI i) {
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
+        while (i.color.a < 1.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
+            yield return null;
+        }
+    }
+ 
+    private IEnumerator FadeTextToZeroAlpha(float t, TextMeshProUGUI i) {
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
+        while (i.color.a > 0.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
+    }
 
 }
 

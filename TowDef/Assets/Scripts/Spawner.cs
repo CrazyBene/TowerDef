@@ -15,14 +15,15 @@ public class Spawner : MonoBehaviour {
 	// the list for one wave, maybe change this to an external file?
 	public List<EnemyWithTime> enemyToSpawn = new List<EnemyWithTime>();
 
+	private bool spawning = false;
 
     public bool Spawning  {
 		get {
-			return this;
+			return spawning;
 		}
 
 		private set {
-			Spawning = value;
+			spawning = value;
 		}
 	}
 
