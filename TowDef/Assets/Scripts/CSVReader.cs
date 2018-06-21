@@ -2,49 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CSVReader : MonoBehaviour {
+// A simple reader for a CSV File
+public class CSVReader {
 
-	[SerializeField]
-	private TextAsset file;
+	private static char lineSeperator = '\n';
+	private static char fieldSeperator = ';';
 
-	private char lineSeperator = '\n';
-	private char fieldSeperator = ';';
+	/// <summary>
+	/// Reads in a CSV File and returns the result
+	/// </summary>
+	/// <param name="csvFile">The TextAssets file which will be read.</param>
+	/// <returns>Returns a List of strings inside a List for each line which contains the data of the file.</returns>
+	public static List<List<string>> ReadFile(TextAsset csvFile) {
+		List<List<string>> result = new List<List<string>>();
 
-	private List<LineObject> objects = new List<LineObject>();
-
-
-	void Start () {
-
-		string[] lines = file.text.Split(lineSeperator);
+		string[] lines = csvFile.text.Split(lineSeperator);
 
 		foreach(string line in lines) {
-			string[] fields = line.Split(fieldSeperator);
+			List<string> currentLine = new List<string>();
 
-			string text = fields[0];
-			int number = int.Parse(fields[1]);
+			foreach(string field in line.Split(fieldSeperator)) {
+				currentLine.Add(field);
+			}
 
-			objects.Add(new LineObject(text, number));
+			result.Add(currentLine);
 		}
 
-		foreach(LineObject o in objects) {
-			Debug.Log(o.ToString());
-		}
-
+		return result;
 	}
 
-}
-
-
-class LineObject {
-	string text;
-	int number;
-
-	public LineObject(string text, int number) {
-		this.text = text;
-		this.number = number;
-	}
-
-	public override string ToString() {
-		return text + " : " + number;
-	}
 }
