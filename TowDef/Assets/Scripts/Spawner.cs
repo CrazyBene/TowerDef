@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour {
 
-	[SerializeField]
-	private GameObject enemyPrefab;
+	[Header("Unity Setup")]
+
 	[SerializeField]
 	private Transform spawnPoint;
 	[SerializeField]
@@ -33,12 +33,6 @@ public class Spawner : MonoBehaviour {
 
     private void Update() {
 
-	}
-
-	public void SpawnEnemy() {
-		GameObject enemyGameObject = Instantiate(enemyPrefab, spawnPoint.position, transform.rotation);
-		EnemyMovement enemyMovement = enemyGameObject.GetComponent<EnemyMovement>();
-		enemyMovement.SetDestination(nexus);
 	}
 
 	public IEnumerator SpawnWave(int waveNumber) {
