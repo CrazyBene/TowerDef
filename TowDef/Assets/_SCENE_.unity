@@ -5080,6 +5080,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
+      propertyPath: waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
       propertyPath: enemyToSpawn.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -5165,6 +5170,24 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: waves.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
+        type: 2}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
+        type: 2}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
   m_IsPrefabParent: 0
@@ -20531,8 +20554,8 @@ Transform:
   - {fileID: 1263819382}
   - {fileID: 1627986884}
   - {fileID: 1322141570}
-  - {fileID: 1339655957}
   - {fileID: 84448751}
+  - {fileID: 1339655957}
   - {fileID: 1160278205}
   - {fileID: 800994983}
   - {fileID: 754115904}
@@ -23708,6 +23731,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
+      propertyPath: waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
       propertyPath: enemyToSpawn.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -23806,6 +23834,12 @@ Prefab:
       propertyPath: nexus
       value: 
       objectReference: {fileID: 1996628749}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
   m_IsPrefabParent: 0
@@ -48904,6 +48938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1517163957}
   - component: {fileID: 1517163958}
+  - component: {fileID: 1517163959}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -48943,6 +48978,17 @@ MonoBehaviour:
   waveCounter: {fileID: 1212021447}
   startNextWaveHint: {fileID: 2033935976}
   phaseText: {fileID: 1426696386}
+--- !u!114 &1517163959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517163956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf77143847111a342b923ee31c95ceda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1517238721 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4632215559172606, guid: 4c1d7c20794b8bd418b38cb1b246ed80,
@@ -60290,6 +60336,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
+      propertyPath: waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
       propertyPath: enemyToSpawn.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -60360,6 +60411,24 @@ Prefab:
       propertyPath: m_Name
       value: Spawner 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
+        type: 2}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
+        type: 2}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: waves.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a55ca46cd0c7d64faa406997ccb4e9b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
   m_IsPrefabParent: 0

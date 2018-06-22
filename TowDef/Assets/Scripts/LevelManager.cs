@@ -105,10 +105,10 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void StartNextWavePhase() {
-		currentWave++;
 		foreach(Spawner spawner in spawners) {
 			StartCoroutine(spawner.SpawnWave(currentWave));
 		}
+		currentWave++;
 		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
 		startNextWaveHint.SetActive(false);
 

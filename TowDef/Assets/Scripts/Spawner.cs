@@ -11,9 +11,13 @@ public class Spawner : MonoBehaviour {
 	[SerializeField]
 	private Transform nexus;
 
-	
-	// the list for one wave, maybe change this to an external file?
-	public List<EnemyWithTime> enemyToSpawn = new List<EnemyWithTime>();
+	[SerializeField]
+	private List<Wave> waves = new List<Wave>();
+
+	private List<List<EnemyWithTime>> e = new List<List<EnemyWithTime>>();
+
+	public TextAsset[] files;
+	public GameObject enemyPrefab;
 
 	private bool spawning = false;
 
@@ -27,17 +31,28 @@ public class Spawner : MonoBehaviour {
 		}
 	}
 
+	private void Awake() {
+		LoadInWaves();
+	}
 
-    private float timeBetweenSpawnsInSec = 5f;
-	private float nextSpawn = 5f;
+	private void LoadInWaves() {
+		for(int i = 0; i < files.Length; i++) {
+			var list = new List<EnemyWithTime>();
 
-    private void Update() {
+			var datas = CSVReader.ReadFile(files[i]);
 
+			foreach(var data in datas) {
+				list.Add(new EnemyWithTime(enemyPrefab, int.Parse(data[1])));
+			}
+		}
 	}
 
 	public IEnumerator SpawnWave(int waveNumber) {
+		if(waves[waveNumber] == null)
+			yield break;
+
 		Spawning = true;
-		foreach(EnemyWithTime e in enemyToSpawn) {
+		foreach(EnemyWithTime e in waves[waveNumber].EnemyWithTime) {
 			yield return new WaitForSeconds(e.time);
 			SpawnEnemy(e.enemy);
 		}
@@ -53,12 +68,4 @@ public class Spawner : MonoBehaviour {
 	}
 
 
-}
-
-
-
-[System.Serializable]
-public class EnemyWithTime {
-	public GameObject enemy;
-	public float time;
 }

@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(agent.remainingDistance < 0.1f && agent.pathStatus == NavMeshPathStatus.PathComplete) {
+		if(agent.remainingDistance < 0.1f && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.hasPath) {
 			Destroy(gameObject);
 			return;
 		}
