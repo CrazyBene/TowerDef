@@ -1,28 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-// TODO: Take all UI Stuff and move it to an extra file
+[RequireComponent(typeof(SpawnManager)), RequireComponent(typeof(UIManager))]
 public class LevelManager : MonoBehaviour {
 
-	[SerializeField]
-	private Spawner[] spawners;
+	private SpawnManager spawnManager;
+
+	private UIManager uiManager;
 
 	[SerializeField]
-	private int maxWaves = 1;
+	public int maxWaves = 1;
 
-	private int currentWave = 0;
-	
-	// Some UI Elements
-	[SerializeField]
-	private TextMeshProUGUI waveCounter;
-
-	[SerializeField]
-	private GameObject startNextWaveHint; 
-
-	// At the moment for debugging
-	public TextMeshProUGUI phaseText;
+	public int currentWave = 0;
 	
 	private LevelPhase levelPhase = LevelPhase.BuildPhase;
 	// Automatic call the start function of each phase
@@ -41,15 +31,16 @@ public class LevelManager : MonoBehaviour {
 			case LevelPhase.EndPhase: 
 				StartEndPhase();
 				break;
-		}
+			}
+			uiManager.OnPhaseChanged(value);
 			levelPhase = value;
 		}
 	}
 
 	private void Awake() {
-		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
+		spawnManager = GetComponent<SpawnManager>();
+		uiManager = GetComponent<UIManager>();
 
-		phaseText.color = new Color(phaseText.color.r, phaseText.color.g, phaseText.color.b, 0f);
 		Phase = LevelPhase.BuildPhase;
 	}
 
@@ -83,7 +74,7 @@ public class LevelManager : MonoBehaviour {
 		// Not the best way to detect no enemies, but it works ok
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-		if(!SpawningEnemies && enemies.Length == 0) {
+		if(!spawnManager.SpawningEnemies && enemies.Length == 0) {
 			if(currentWave == maxWaves) 
 				Phase = LevelPhase.EndPhase;
 			else
@@ -98,79 +89,20 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void StartBuildPhase() {
-		startNextWaveHint.SetActive(true);
-
-		phaseText.text = "Build";
-		StartCoroutine(FadeInAndOut(1f, phaseText));
 	}
 
 	private void StartNextWavePhase() {
-		foreach(Spawner spawner in spawners) {
-			StartCoroutine(spawner.SpawnWave(currentWave));
-		}
+		spawnManager.SpawnWave(currentWave);
+		uiManager.NextWave(currentWave, maxWaves);
 		currentWave++;
-		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
-		startNextWaveHint.SetActive(false);
-
-		phaseText.text = "Wave";
-		StartCoroutine(FadeInAndOut(1f, phaseText));
 	}
 
 	private void StartEndPhase() {
-		phaseText.text = "End";
-		StartCoroutine(FadeInAndOut(1f, phaseText));
 	}
-
-
-	private bool SpawningEnemies {
-		get {
-			foreach(Spawner spawner in spawners) {
-				if(spawner.Spawning)
-					return true;
-			}
-			return false;
-		}
-	}
-
-	private IEnumerator FadeInAndOut(float t, TextMeshProUGUI i) {
-		i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
-        while (i.color.a < 1.0f)
-        {
-            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
-            yield return null;
-        }
-
-		yield return 3f;
-
-		i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
-        while (i.color.a > 0.0f)
-        {
-            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
-            yield return null;
-        }
-	}
-
-	private IEnumerator FadeTextToFullAlpha(float t, TextMeshProUGUI i) {
-        i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
-        while (i.color.a < 1.0f)
-        {
-            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
-            yield return null;
-        }
-    }
- 
-    private IEnumerator FadeTextToZeroAlpha(float t, TextMeshProUGUI i) {
-        i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
-        while (i.color.a > 0.0f)
-        {
-            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
-            yield return null;
-        }
-    }
 
 }
 
-enum LevelPhase {
+public enum LevelPhase {
 	BuildPhase,
 	WavePhase,
 	EndPhase

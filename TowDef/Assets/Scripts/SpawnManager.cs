@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	[SerializeField]
+	private Spawner[] spawners;
+
+	public void SpawnWave(int waveNumber) {
+		foreach(Spawner spawner in spawners) {
+			StartCoroutine(spawner.SpawnWave(waveNumber));
+		}
 	}
+
+	public bool SpawningEnemies {
+		get {
+			foreach(Spawner spawner in spawners) {
+				if(spawner.Spawning)
+					return true;
+			}
+			return false;
+		}
+	}
+
 }

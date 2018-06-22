@@ -48939,6 +48939,7 @@ GameObject:
   - component: {fileID: 1517163957}
   - component: {fileID: 1517163958}
   - component: {fileID: 1517163959}
+  - component: {fileID: 1517163960}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -48970,14 +48971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193ba2a673c72f74582b8c5801b1e0b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawners:
-  - {fileID: 1111421072}
-  - {fileID: 351135712}
-  - {fileID: 733050814}
   maxWaves: 3
-  waveCounter: {fileID: 1212021447}
-  startNextWaveHint: {fileID: 2033935976}
-  phaseText: {fileID: 1426696386}
+  currentWave: 0
 --- !u!114 &1517163959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48989,6 +48984,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf77143847111a342b923ee31c95ceda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawners:
+  - {fileID: 1111421072}
+  - {fileID: 351135712}
+  - {fileID: 733050814}
+--- !u!114 &1517163960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1517163956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba5a8815adde77438f91a119a4b4430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveCounter: {fileID: 1212021447}
+  startNextWaveHint: {fileID: 2033935976}
+  phaseText: {fileID: 1426696386}
 --- !u!4 &1517238721 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4632215559172606, guid: 4c1d7c20794b8bd418b38cb1b246ed80,
