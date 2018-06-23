@@ -10,9 +10,9 @@ public class LevelManager : MonoBehaviour {
 	private UIManager uiManager;
 
 	[SerializeField]
-	public int maxWaves = 1;
+	private int maxWaves = 1;
 
-	public int currentWave = 0;
+	private int currentWave = 0;
 	
 	private LevelPhase levelPhase = LevelPhase.BuildPhase;
 	// Automatic call the start function of each phase
