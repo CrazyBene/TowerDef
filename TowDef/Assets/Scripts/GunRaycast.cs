@@ -17,6 +17,7 @@ public class GunRaycast : MonoBehaviour {
 	[SerializeField]
 	private Transform gunEnd;
 
+	public LayerMask ignoreLayer;
 
 	private Camera fpsCam;
 	private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
@@ -42,7 +43,7 @@ public class GunRaycast : MonoBehaviour {
 
 			laserLine.SetPosition(0, gunEnd.position);
 
-			if(Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange)) {
+			if(Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange, ~ignoreLayer)) {
 				laserLine.SetPosition(1, hit.point);
 
 				// detect if we can damage the object

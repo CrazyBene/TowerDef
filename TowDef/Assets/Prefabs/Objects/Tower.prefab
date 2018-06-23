@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33044523582299888}
   - component: {fileID: 23092282600473402}
   - component: {fileID: 64921025136200830}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33458979101987986}
   - component: {fileID: 23929195415782914}
   - component: {fileID: 64044866066114738}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fire Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4496090919191850}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4902023084728792}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4603203004318302}
   - component: {fileID: 114705678234668066}
   - component: {fileID: 135002697552963242}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

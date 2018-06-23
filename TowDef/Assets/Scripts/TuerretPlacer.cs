@@ -13,6 +13,9 @@ public class TuerretPlacer : MonoBehaviour {
 	[SerializeField]
 	private KeyCode turretHotkey = KeyCode.A;
 
+	[SerializeField]
+	private GameObject gun;
+
 	// Maybe move that to the player directly
 	[SerializeField]
 	private int playerMoney = 100;
@@ -34,8 +37,10 @@ public class TuerretPlacer : MonoBehaviour {
 		if(Input.GetKeyDown(turretHotkey)) {
 			if(currentTurret == null) {
 				currentTurret = Instantiate(turretPrefab);
+				gun.SetActive(false);
 			} else {
 				Destroy(currentTurret);
+				gun.SetActive(true);
 			}
 		}
 	}
@@ -68,6 +73,8 @@ public class TuerretPlacer : MonoBehaviour {
 			currentTurret = null;
 
 			playerMoney -= turretCost;
+
+			gun.SetActive(true);
 		}
 	}
 
