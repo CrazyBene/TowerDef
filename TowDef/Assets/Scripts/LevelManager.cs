@@ -10,6 +10,11 @@ public class LevelManager : MonoBehaviour {
 	private UIManager uiManager;
 
 	[SerializeField]
+	private Nexus nexus;
+
+	private bool lost = false;
+
+	[SerializeField]
 	private int maxWaves = 1;
 
 	private int currentWave = 0;
@@ -40,6 +45,7 @@ public class LevelManager : MonoBehaviour {
 	private void Awake() {
 		spawnManager = GetComponent<SpawnManager>();
 		uiManager = GetComponent<UIManager>();
+		uiManager.NextWave(currentWave, maxWaves);
 
 		Phase = LevelPhase.BuildPhase;
 	}
@@ -82,6 +88,10 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		// If the nexus gets destroyed go to the endphase
+		if(nexus.IsDestroyed) {
+			Phase = LevelPhase.EndPhase;
+			lost = true;
+		}
 	}
 
 	private void UpdateEndPhase() {
@@ -93,11 +103,16 @@ public class LevelManager : MonoBehaviour {
 
 	private void StartNextWavePhase() {
 		spawnManager.SpawnWave(currentWave);
-		uiManager.NextWave(currentWave, maxWaves);
 		currentWave++;
+		uiManager.NextWave(currentWave, maxWaves);
 	}
 
 	private void StartEndPhase() {
+		Time.timeScale = 0;
+		if(lost)
+			Debug.Log("Lost");
+		else
+			Debug.Log("Won");
 	}
 
 }

@@ -17,9 +17,20 @@ public class Nexus : MonoBehaviour {
 		currentHealth -= damage;
 	}
 
-	public bool Destroyed {
+	public bool IsDestroyed {
 		get {
 			return currentHealth <= 0;
+		}
+	}
+
+	private void OnTriggerEnter(Collider collider) {
+		GameObject go = collider.gameObject;
+		if(go.CompareTag("Enemy")) {
+			Enemy enemy = go.GetComponentInParent<Enemy>();
+
+			TakeDamage(enemy.health);
+
+			enemy.Die();
 		}
 	}
 
