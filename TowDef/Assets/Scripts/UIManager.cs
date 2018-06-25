@@ -42,6 +42,10 @@ public class UIManager : MonoBehaviour {
 		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
 	}
 
+	public void UpdateUI(int money){
+
+	}
+
 	private IEnumerator FadeInAndOut(float t, TextMeshProUGUI i) {
 		i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
     while (i.color.a < 1.0f){

@@ -13,8 +13,10 @@ public class Tower : MonoBehaviour {
 
 	private float fireCountdown = 0f;
 
+	private bool placed = false;
 
-	[Header("Unity Setup")] 
+
+	[Header("Unity Setup")]
 	[SerializeField]
 	private Transform firePoint;
 
@@ -71,6 +73,9 @@ public class Tower : MonoBehaviour {
 	}
 
 	private void Shoot() {
+		if (!placed) {
+			return;
+		}
 		GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 
@@ -142,4 +147,8 @@ public class Tower : MonoBehaviour {
 		Gizmos.DrawWireSphere(transform.position, range);
 	}
 
+	public bool Placed {
+      get { return placed; }
+      set { placed = value; }
+  }
 }

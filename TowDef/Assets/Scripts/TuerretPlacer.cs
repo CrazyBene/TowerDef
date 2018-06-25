@@ -16,9 +16,7 @@ public class TuerretPlacer : MonoBehaviour {
 	[SerializeField]
 	private GameObject gun;
 
-	// Maybe move that to the player directly
-	[SerializeField]
-	private int playerMoney = 100;
+	private Player player;
 
 	private GameObject currentTurret;
     private float mouseWheelRotation;
@@ -31,6 +29,10 @@ public class TuerretPlacer : MonoBehaviour {
 			RotateCurrentTurret();
 			ReleaseIfClicked();
 		}
+	}
+
+	private void Awake(){
+		player = GetComponent<Player>();
 	}
 
 	private void HandleNewObjectHotkey() {
@@ -50,8 +52,7 @@ public class TuerretPlacer : MonoBehaviour {
 
 		RaycastHit hitInfo;
 
-		// TODO: Maybe dont use the tower directly or disable the tower script, 
-		// 		 AND also display to the player if he can afford the tower or not
+		// TODO: display to the player if he can afford the tower or not
 		// TODO: Make the ray only hit terrain where it can also be placed
 		if(Physics.Raycast(ray, out hitInfo)) {
 			currentTurret.transform.position = hitInfo.point;
@@ -66,14 +67,13 @@ public class TuerretPlacer : MonoBehaviour {
 	}
 
 	private void ReleaseIfClicked() {
-		if(Input.GetMouseButtonDown(0) && playerMoney >= turretCost) {
+		if(Input.GetMouseButtonDown(0) && player.Money >= turretCost) {
 			foreach(MeshCollider col in currentTurret.GetComponentsInChildren<MeshCollider>()) {
 				col.enabled = true;
 			}
+			currentTurret.GetComponent<Tower>().Placed = true;
 			currentTurret = null;
-
-			playerMoney -= turretCost;
-
+			player.Money -= turretCost;
 			gun.SetActive(true);
 		}
 	}
