@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour {
 	private TextMeshProUGUI waveCounter;
 
 	[SerializeField]
-	private GameObject startNextWaveHint; 
+	private GameObject startNextWaveHint;
 
 	// At the moment for debugging
 	public TextMeshProUGUI phaseText;
@@ -22,15 +22,16 @@ public class UIManager : MonoBehaviour {
 
 	public void OnPhaseChanged(LevelPhase newPhase) {
 		switch(newPhase) {
-			case LevelPhase.BuildPhase: 
+			case LevelPhase.BuildPhase:
 				phaseText.text = "Build";
 				startNextWaveHint.SetActive(true);
 				break;
-			case LevelPhase.WavePhase:				
+			case LevelPhase.WavePhase:
 				startNextWaveHint.SetActive(false);
 				phaseText.text = "Wave";
 				break;
-			case LevelPhase.EndPhase:			
+			case LevelPhase.EndPhase:
+				startNextWaveHint.SetActive(false);
 				phaseText.text = "End";
 				break;
 		}
@@ -43,20 +44,17 @@ public class UIManager : MonoBehaviour {
 
 	private IEnumerator FadeInAndOut(float t, TextMeshProUGUI i) {
 		i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
-        while (i.color.a < 1.0f)
-        {
-            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
-            yield return null;
-        }
+    while (i.color.a < 1.0f){
+        i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
+        yield return null;
+    }
 
-		yield return 3f;
+		yield return new WaitForSeconds(3f);
 
 		i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
-        while (i.color.a > 0.0f)
-        {
-            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
-            yield return null;
-        }
+    while (i.color.a > 0.0f){
+        i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+        yield return null;
+    }
 	}
-
 }
