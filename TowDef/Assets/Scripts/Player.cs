@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour {
 
@@ -10,9 +11,12 @@ public class Player : MonoBehaviour {
   [SerializeField]
 	private int money = 100;
 
+  [SerializeField]
+	private TextMeshProUGUI moneyText;
+
   public int Money {
       get { return money; }
-      set { money = value; }
+      set { money = value; moneyText.text = value + "G"; }
   }
 
 	public void TakeDamage(float damage) {

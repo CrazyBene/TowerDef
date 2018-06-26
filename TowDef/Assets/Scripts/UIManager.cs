@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour {
 	public TextMeshProUGUI phaseText;
 
 
+
 	private void Awake() {
 		phaseText.color = new Color(phaseText.color.r, phaseText.color.g, phaseText.color.b, 0f);
 	}
@@ -42,9 +43,6 @@ public class UIManager : MonoBehaviour {
 		waveCounter.text = "Wave " + currentWave + "/" + maxWaves;
 	}
 
-	public void UpdateUI(int money){
-
-	}
 
 	private IEnumerator FadeInAndOut(float t, TextMeshProUGUI i) {
 		i.color = new Color(i.color.r, i.color.g, i.color.b, 0);

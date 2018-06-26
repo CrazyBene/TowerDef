@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5123,7 +5123,7 @@ Prefab:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: nexus
-      value:
+      value: 
       objectReference: {fileID: 355219017}
     - target: {fileID: 1360795246603034, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
       propertyPath: m_Name
@@ -5132,19 +5132,19 @@ Prefab:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[0].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[1].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[2].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
@@ -5173,19 +5173,19 @@ Prefab:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: waves.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: waves.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: waves.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
         type: 2}
     m_RemovedComponents: []
@@ -7418,8 +7418,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -10985,7 +10985,7 @@ Prefab:
     - target: {fileID: 114641206275957362, guid: d101293e792bc004e8c1583ea8c4f629,
         type: 2}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: 4c35120aeffbc18498e06d25bf2b9cb0,
         type: 3}
     - target: {fileID: 114641206275957362, guid: d101293e792bc004e8c1583ea8c4f629,
@@ -11006,12 +11006,12 @@ Prefab:
     - target: {fileID: 114231604614372122, guid: d101293e792bc004e8c1583ea8c4f629,
         type: 2}
       propertyPath: healthbar
-      value:
+      value: 
       objectReference: {fileID: 886816995}
     - target: {fileID: 114231604614372122, guid: d101293e792bc004e8c1583ea8c4f629,
         type: 2}
       propertyPath: healthbarRotation
-      value:
+      value: 
       objectReference: {fileID: 1851426866}
     - target: {fileID: 114641206275957362, guid: d101293e792bc004e8c1583ea8c4f629,
         type: 2}
@@ -13997,8 +13997,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f87e4989c5e703e428df4339d59e2c72, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   showMainBehavior: 1
   showInnerGlowBehavior: 0
   rtFormat: 0
@@ -17785,8 +17785,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
@@ -19359,8 +19359,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53cf02b4e79a10d4086097c9ee4778c0, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   levelMap: {fileID: 2800000, guid: ac86e19758d5cb146bbd957b9d9597b2, type: 3}
   groundColor:
     serializedVersion: 2
@@ -23898,31 +23898,31 @@ Prefab:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[0].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[1].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[2].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[3].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[4].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
@@ -23948,12 +23948,12 @@ Prefab:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: nexus
-      value:
+      value: 
       objectReference: {fileID: 355219017}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: waves.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
         type: 2}
     m_RemovedComponents: []
@@ -27774,8 +27774,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a34495a9338f29246bd8c57e8204be19, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   gunDamage: 5
   fireRate: 0.25
   weaponRange: 50
@@ -39067,8 +39067,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -39104,7 +39104,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
+  m_fontSize: 39.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -39122,7 +39122,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 5
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -39150,7 +39150,7 @@ MonoBehaviour:
     spaceCount: 1
     wordCount: 3
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -45438,8 +45438,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -45454,8 +45454,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -46048,8 +46048,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -46085,7 +46085,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 26
+  m_fontSize: 61.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -47380,8 +47380,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96c4c36251b2f341a591eedf1b6772c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   turretPrefab: {fileID: 1928534860588698, guid: db0059d912c4d4b45927eab4e43c22d5,
     type: 2}
   turretCost: 45
@@ -47396,8 +47396,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1426fbbdde8784120900c1331a56f19e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   health: 100
   money: 100
 --- !u!1001 &1458364936
@@ -49365,8 +49365,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 193ba2a673c72f74582b8c5801b1e0b9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   nexus: {fileID: 1135333330}
   maxWaves: 3
 --- !u!114 &1517163959
@@ -49378,8 +49378,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf77143847111a342b923ee31c95ceda, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawners:
   - {fileID: 1111421072}
   - {fileID: 351135712}
@@ -49393,8 +49393,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ba5a8815adde77438f91a119a4b4430, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   waveCounter: {fileID: 1212021447}
   startNextWaveHint: {fileID: 2033935976}
   phaseText: {fileID: 1426696386}
@@ -60885,18 +60885,18 @@ Prefab:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: nexus
-      value:
+      value: 
       objectReference: {fileID: 355219017}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[0].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: enemyToSpawn.Array.data[1].enemy
-      value:
+      value: 
       objectReference: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
@@ -60916,19 +60916,19 @@ Prefab:
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: waves.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: waves.Array.data[2]
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 6e5963248782f5d47ad704982ae74679,
         type: 2}
     - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
         type: 2}
       propertyPath: waves.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 2a55ca46cd0c7d64faa406997ccb4e9b,
         type: 2}
     m_RemovedComponents: []
@@ -62884,8 +62884,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: 0.13103461, a: 1}
   m_RaycastTarget: 1
@@ -66453,8 +66453,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -66490,7 +66490,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 12
+  m_fontSize: 23.05
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -66508,7 +66508,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 13
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -66536,7 +66536,7 @@ MonoBehaviour:
     spaceCount: 5
     wordCount: 6
     linkCount: 0
-    lineCount: 3
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -66948,8 +66948,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -66966,8 +66966,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
