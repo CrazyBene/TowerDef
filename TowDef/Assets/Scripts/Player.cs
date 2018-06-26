@@ -14,6 +14,9 @@ public class Player : MonoBehaviour {
   [SerializeField]
 	private TextMeshProUGUI moneyText;
 
+  [SerializeField]
+  private Transform spawnPoint;
+
   public int Money {
       get { return money; }
       set { money = value; moneyText.text = value + "G"; }
@@ -26,5 +29,11 @@ public class Player : MonoBehaviour {
       //TODO: handle death
 		}
 	}
+
+  private void Update() {
+    if(transform.position.y < -1f) {
+      transform.position = spawnPoint.position;
+    }
+  }
 
 }
