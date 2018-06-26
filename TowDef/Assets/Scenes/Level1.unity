@@ -47546,6 +47546,9 @@ MonoBehaviour:
   turretCost: 45
   turretHotkey: 49
   gun: {fileID: 861689247}
+  placableLayers:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &1457213447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59589,6 +59592,10 @@ Prefab:
     - target: {fileID: 1665300761353206, guid: e6ec38c70552b6346a2fae187e5abfae, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543604827376884, guid: e6ec38c70552b6346a2fae187e5abfae, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6ec38c70552b6346a2fae187e5abfae, type: 2}

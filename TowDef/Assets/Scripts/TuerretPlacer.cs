@@ -16,6 +16,9 @@ public class TuerretPlacer : MonoBehaviour {
 	[SerializeField]
 	private GameObject gun;
 
+	[SerializeField]
+	private LayerMask placableLayers;
+
 	private Player player;
 
 	private GameObject currentTurret;
@@ -54,7 +57,7 @@ public class TuerretPlacer : MonoBehaviour {
 
 		// TODO: display to the player if he can afford the tower or not
 		// TODO: Make the ray only hit terrain where it can also be placed
-		if(Physics.Raycast(ray, out hitInfo)) {
+		if(Physics.Raycast(ray, out hitInfo, Mathf.Infinity, placableLayers)) {
 			currentTurret.transform.position = hitInfo.point;
 			currentTurret.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
 		}
