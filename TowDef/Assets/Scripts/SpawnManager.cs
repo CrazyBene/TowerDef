@@ -6,6 +6,18 @@ public class SpawnManager : MonoBehaviour {
 	
 	[SerializeField]
 	private Spawner[] spawners;
+	public StringToPrefab[] stringToEnemy;
+	public Dictionary<string, GameObject> stringToEnemyDic = new Dictionary<string, GameObject>();
+
+	private void Awake() {
+		foreach(Spawner spawner in spawners) {
+			spawner.manager = this;
+		}
+
+		foreach(StringToPrefab e in stringToEnemy) {
+			stringToEnemyDic.Add(e.name, e.prefab);
+		}
+	}
 
 	public void SpawnWave(int waveNumber) {
 		foreach(Spawner spawner in spawners) {
@@ -23,4 +35,11 @@ public class SpawnManager : MonoBehaviour {
 		}
 	}
 
+}
+
+
+[System.Serializable]
+public struct StringToPrefab {
+	public string name;
+	public GameObject prefab;
 }

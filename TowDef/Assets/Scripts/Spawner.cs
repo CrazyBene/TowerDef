@@ -11,13 +11,11 @@ public class Spawner : MonoBehaviour {
 	[SerializeField]
 	private Transform nexus;
 
-	[SerializeField]
-	private List<Wave> waves = new List<Wave>();
-
-	private List<List<EnemyWithTime>> e = new List<List<EnemyWithTime>>();
+	private List<List<EnemyWithTime>> enemyWaves = new List<List<EnemyWithTime>>();
 
 	public TextAsset[] files;
-	public GameObject enemyPrefab;
+
+	public SpawnManager manager;
 
 	private bool spawning = false;
 
@@ -31,7 +29,7 @@ public class Spawner : MonoBehaviour {
 		}
 	}
 
-	private void Awake() {
+	private void Start() {
 		LoadInWaves();
 	}
 
@@ -39,20 +37,24 @@ public class Spawner : MonoBehaviour {
 		for(int i = 0; i < files.Length; i++) {
 			var list = new List<EnemyWithTime>();
 
-			var datas = CSVReader.ReadFile(files[i]);
+			if(files[i] != null) {
 
-			foreach(var data in datas) {
-				list.Add(new EnemyWithTime(enemyPrefab, int.Parse(data[1])));
+				var datas = CSVReader.ReadFile(files[i]);
+
+				foreach(var data in datas) {
+					list.Add(new EnemyWithTime(manager.stringToEnemyDic[data[0]], int.Parse(data[1])));
+				}
 			}
+			enemyWaves.Add(list);
 		}
 	}
 
 	public IEnumerator SpawnWave(int waveNumber) {
-		if(waves[waveNumber] == null)
+		if(enemyWaves[waveNumber] == null)
 			yield break;
 
 		Spawning = true;
-		foreach(EnemyWithTime e in waves[waveNumber].EnemyWithTime) {
+		foreach(EnemyWithTime e in enemyWaves[waveNumber]) {
 			yield return new WaitForSeconds(e.time);
 			SpawnEnemy(e.enemy);
 		}
