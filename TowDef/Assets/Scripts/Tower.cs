@@ -84,7 +84,6 @@ public class Tower : MonoBehaviour {
 		}
 	}
 
-
 	// Triggers and functions for enemy detection
 	public void OnTriggerEnter(Collider collider) {
 		GameObject go = collider.gameObject;

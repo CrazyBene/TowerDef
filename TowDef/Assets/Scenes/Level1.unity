@@ -11000,7 +11000,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4383872710317664, guid: d101293e792bc004e8c1583ea8c4f629, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114641206275957362, guid: d101293e792bc004e8c1583ea8c4f629,
         type: 2}
@@ -25406,7 +25406,7 @@ Transform:
   - {fileID: 1953684572}
   - {fileID: 2039921966}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &774664831
 Prefab:
@@ -39161,7 +39161,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
+  m_fontSize: 47.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -44909,7 +44909,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 62.75
+  m_fontSize: 63.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -46297,7 +46297,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 46.85
+  m_fontSize: 60.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -49604,6 +49604,8 @@ MonoBehaviour:
   stringToEnemy:
   - name: enemyCube
     prefab: {fileID: 1700740616160816, guid: 3dfdd09fec890ed4e9600486b034c47a, type: 2}
+  - name: enemySphere
+    prefab: {fileID: 1700740616160816, guid: dec69f5c569381a40ab3c4da8dd92976, type: 2}
 --- !u!114 &1517163960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61157,6 +61159,11 @@ Prefab:
       propertyPath: waves.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d,
+        type: 2}
+      propertyPath: files.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: d14b920338f67134aa73ed6424773a22, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
   m_IsPrefabParent: 0
@@ -66716,7 +66723,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 19.45
+  m_fontSize: 23.25
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
