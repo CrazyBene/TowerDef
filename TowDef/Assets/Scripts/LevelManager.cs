@@ -46,7 +46,9 @@ public class LevelManager : MonoBehaviour {
 		spawnManager = GetComponent<SpawnManager>();
 		uiManager = GetComponent<UIManager>();
 		uiManager.NextWave(currentWave, maxWaves);
+	}
 
+	private void Start() {
 		Phase = LevelPhase.BuildPhase;
 	}
 
@@ -101,6 +103,8 @@ public class LevelManager : MonoBehaviour {
 	private void StartBuildPhase() {
 		// Give the player money
 		FindObjectOfType<Player>().Money += 50;
+
+		spawnManager.PrepareNextWave(currentWave+1);
 	}
 
 	private void StartNextWavePhase() {

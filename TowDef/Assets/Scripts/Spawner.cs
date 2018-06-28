@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour {
 	[SerializeField]
 	private Transform nexus;
 
+	[SerializeField]
+	private GameObject canvas;
+
 	private List<List<EnemyWithTime>> enemyWaves = new List<List<EnemyWithTime>>();
 
 	public TextAsset[] files;
@@ -47,6 +50,13 @@ public class Spawner : MonoBehaviour {
 			}
 			enemyWaves.Add(list);
 		}
+	}
+
+	public void PrepareForNextWave(int waveNumber) {
+		if(enemyWaves[waveNumber-1].Count == 0)
+			canvas.SetActive(false);
+		else
+			canvas.SetActive(true);
 	}
 
 	public IEnumerator SpawnWave(int waveNumber) {

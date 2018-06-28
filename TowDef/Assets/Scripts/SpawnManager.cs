@@ -19,6 +19,12 @@ public class SpawnManager : MonoBehaviour {
 		}
 	}
 
+	public void PrepareNextWave(int waveNumber) {
+		foreach(Spawner spawner in spawners) {
+			spawner.PrepareForNextWave(waveNumber);
+		}
+	}
+
 	public void SpawnWave(int waveNumber) {
 		foreach(Spawner spawner in spawners) {
 			StartCoroutine(spawner.SpawnWave(waveNumber));
