@@ -26,24 +26,24 @@ public class SelectLevelMenu : MonoBehaviour {
 
 	private int maxLevels;
 
-	private int currentLevel = 1;
+	private int currentLevel = 0;
 
 	private int maxLevelPlayable;
 
 	private void Awake() {
 		maxLevels = scenes.Count;
 
-		maxLevelPlayable = PlayerPrefs.GetInt("maxLevelPlayable", 1);
+		maxLevelPlayable = PlayerPrefs.GetInt("maxLevelPlayable", 0);
 	}
 
 	public void ChangeLevel(int change) {
 		currentLevel += change;
 
-		if(currentLevel == 0)
+		if(currentLevel <= 0)
 			currentLevel = maxLevels;
 
 		if(currentLevel == maxLevels + 1) {
-			currentLevel = 1;
+			currentLevel = 0;
 		}
 
 		// Check if we can play that level
