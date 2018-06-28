@@ -99,6 +99,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void StartBuildPhase() {
+		// Give the player money
+		FindObjectOfType<Player>().Money += 50;
 	}
 
 	private void StartNextWavePhase() {

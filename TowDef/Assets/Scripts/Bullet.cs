@@ -10,6 +10,9 @@ public class Bullet : MonoBehaviour {
 	private float speed = 70f;
 	[SerializeField]
 	private float damage = 5f;
+
+	[SerializeField]
+	private GameObject impactParticle;
 	
 	public void Seek(Transform target) {
 		this.target = target;
@@ -41,6 +44,9 @@ public class Bullet : MonoBehaviour {
 		// Do damage to the enemy
 		Enemy enemy = target.GetComponent<Enemy>();
 		enemy.TakeDamage(damage);
+
+		GameObject particle = Instantiate(impactParticle, transform.position, transform.rotation);
+		Destroy(particle, 2f);
 	}
 
 	public void OnTriggerEnter(Collider collider) {
