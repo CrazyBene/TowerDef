@@ -52,9 +52,16 @@ public class TuerretPlacer : MonoBehaviour {
 					} 
 					currentTurret = Instantiate(towersToPlace[i].towerPrefab);
 					currentPrefabIndex = i;
+					gun.SetActive(false);
 				}
 				break;
 			}
+		}
+
+		if(Input.GetMouseButtonDown(1)) {
+			Destroy(currentTurret);
+			gun.SetActive(true);
+			currentPrefabIndex = -1;
 		}
 	}
 
