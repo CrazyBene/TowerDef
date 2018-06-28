@@ -9,6 +9,9 @@ public class Tower : MonoBehaviour {
 	private float range = 10f;
 
 	[SerializeField]
+	private float damage = 5f;
+
+	[SerializeField]
 	private float fireRate = 1f;
 
 	private float fireCountdown = 0f;
@@ -81,6 +84,7 @@ public class Tower : MonoBehaviour {
 
 		if(bullet != null) {
 			bullet.Seek(closestEnemy.transform);
+			bullet.SetDamage(damage);
 		}
 	}
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +9,11 @@ public class TuerretPlacer : MonoBehaviour {
 	private GameObject turretPrefab;
 
 	[SerializeField]
-	private int turretCost;
+	private TowerToPlace[] towersToPlace;
 
-	[SerializeField]
-	private KeyCode turretHotkey = KeyCode.A;
+	private int currentPrefabIndex = -1;
 
+	// This is donw really bad, but for now it works
 	[SerializeField]
 	private GameObject gun;
 
@@ -39,18 +40,30 @@ public class TuerretPlacer : MonoBehaviour {
 	}
 
 	private void HandleNewObjectHotkey() {
-		if(Input.GetKeyDown(turretHotkey)) {
-			if(currentTurret == null) {
-				currentTurret = Instantiate(turretPrefab);
-				gun.SetActive(false);
-			} else {
-				Destroy(currentTurret);
-				gun.SetActive(true);
+		for(int i = 0; i < towersToPlace.Length; i++) {
+			if(Input.GetKeyDown(KeyCode.Alpha0 + 1 + i)) {
+				if(PressedKeyOfCurrentPrefab(i)) {
+					Destroy(currentTurret);
+					gun.SetActive(true);
+					currentPrefabIndex = -1;
+				} else {
+					if(currentTurret == null) {
+						Destroy(currentTurret);
+					} 
+					currentTurret = Instantiate(towersToPlace[i].towerPrefab);
+					currentPrefabIndex = i;
+				}
+				break;
 			}
 		}
 	}
 
-	private void MoveCurrentTurret() {
+    private bool PressedKeyOfCurrentPrefab(int i)
+    {
+        return currentPrefabIndex == i && currentTurret != null;
+    }
+
+    private void MoveCurrentTurret() {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 		RaycastHit hitInfo;
@@ -70,15 +83,21 @@ public class TuerretPlacer : MonoBehaviour {
 	}
 
 	private void ReleaseIfClicked() {
-		if(Input.GetMouseButtonDown(0) && player.Money >= turretCost) {
+		if(Input.GetMouseButtonDown(0) && player.Money >= towersToPlace[currentPrefabIndex].towerCost) {
 			foreach(MeshCollider col in currentTurret.GetComponentsInChildren<MeshCollider>()) {
 				col.enabled = true;
 			}
 			currentTurret.GetComponent<Tower>().Placed = true;
 			currentTurret = null;
-			player.Money -= turretCost;
+			player.Money -= towersToPlace[currentPrefabIndex].towerCost;
 			gun.SetActive(true);
 		}
 	}
 
+}
+
+[System.Serializable]
+public class TowerToPlace {
+	public GameObject towerPrefab;
+	public int towerCost;
 }

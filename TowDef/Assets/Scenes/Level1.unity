@@ -11255,7 +11255,7 @@ Prefab:
     - target: {fileID: 114363091544477012, guid: d101293e792bc004e8c1583ea8c4f629,
         type: 2}
       propertyPath: health
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d101293e792bc004e8c1583ea8c4f629, type: 2}
@@ -48086,8 +48086,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretPrefab: {fileID: 1928534860588698, guid: db0059d912c4d4b45927eab4e43c22d5,
     type: 2}
-  turretCost: 45
-  turretHotkey: 49
+  towersToPlace:
+  - towerPrefab: {fileID: 1928534860588698, guid: db0059d912c4d4b45927eab4e43c22d5,
+      type: 2}
+    towerCost: 45
+  - towerPrefab: {fileID: 1897186097576814, guid: 443ad6f49ebcd0e468123162fd74d313,
+      type: 2}
+    towerCost: 80
   gun: {fileID: 861689247}
   placableLayers:
     serializedVersion: 2

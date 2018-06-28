@@ -37,6 +37,10 @@ public class Bullet : MonoBehaviour {
 		
 	}
 
+	public void SetDamage(float damage) {
+		this.damage = damage;
+	}
+
 	private void HitTarget(GameObject target) {
 		// Destroy the bullet itself
 		Destroy(gameObject);
