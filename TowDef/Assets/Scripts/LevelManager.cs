@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 [RequireComponent(typeof(SpawnManager)), RequireComponent(typeof(UIManager))]
 public class LevelManager : MonoBehaviour {
@@ -18,6 +19,11 @@ public class LevelManager : MonoBehaviour {
 	private int maxWaves = 1;
 
 	private int currentWave = 0;
+
+	[SerializeField]
+	private GameObject endGameCanvas;
+
+	private GameObject player;
 	
 	private LevelPhase levelPhase = LevelPhase.BuildPhase;
 	// Automatic call the start function of each phase
@@ -43,6 +49,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void Awake() {
+		Time.timeScale = 1;
 		spawnManager = GetComponent<SpawnManager>();
 		uiManager = GetComponent<UIManager>();
 		uiManager.NextWave(currentWave, maxWaves);
@@ -50,6 +57,8 @@ public class LevelManager : MonoBehaviour {
 
 	private void Start() {
 		Phase = LevelPhase.BuildPhase;
+
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 
@@ -91,8 +100,8 @@ public class LevelManager : MonoBehaviour {
 
 		// If the nexus gets destroyed go to the endphase
 		if(nexus.IsDestroyed) {
-			Phase = LevelPhase.EndPhase;
 			lost = true;
+			Phase = LevelPhase.EndPhase;
 		}
 	}
 
@@ -119,6 +128,13 @@ public class LevelManager : MonoBehaviour {
 			Debug.Log("Lost");
 		else
 			Debug.Log("Won");
+
+		endGameCanvas.SetActive(true);
+		endGameCanvas.GetComponent<EndGameCanvas>().SetWinningStatus(!lost);
+
+		player.GetComponent<FirstPersonController>().enabled = false;
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 	}
 
 }

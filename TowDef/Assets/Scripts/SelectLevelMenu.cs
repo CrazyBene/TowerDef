@@ -59,7 +59,7 @@ public class SelectLevelMenu : MonoBehaviour {
 
 	public void StartLevel() {
 		/* if(maxLevelPlayable >= currentLevel) { */
-			SceneManager.LoadScene(scenes[currentLevel - 1].name);
+			SceneManager.LoadScene("Level" + currentLevel);
 		/* } */
 	}
 

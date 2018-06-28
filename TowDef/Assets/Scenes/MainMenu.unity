@@ -28474,7 +28474,9 @@ Prefab:
       propertyPath: files.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: c5b4e08afdd627b40b89e1ec6bd8bd72, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114323989742659186, guid: f8a54f4772db5cc44b14780ca89a70ef, type: 2}
+    - {fileID: 114560764067150390, guid: f8a54f4772db5cc44b14780ca89a70ef, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f8a54f4772db5cc44b14780ca89a70ef, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &893675435 stripped
@@ -40456,7 +40458,9 @@ Prefab:
       propertyPath: files.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: cfd00a1e9942ea341abd64f010e19782, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114304575025733586, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
+    - {fileID: 114178195791753324, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5ebb2aca79ba3314c9033b485b0ac99d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1222827918 stripped
@@ -52622,7 +52626,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 207}
-  m_SizeDelta: {x: 291.3, y: -443.8}
+  m_SizeDelta: {x: 0, y: -414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547364404
 MonoBehaviour:
@@ -52643,7 +52647,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: SPIELNAME
+  m_text: Laser Defend
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 808aa8f1ab804104aa7d0c337a6c1481, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 808aa8f1ab804104aa7d0c337a6c1481, type: 2}
@@ -52711,10 +52715,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1547364404}
-    characterCount: 9
+    characterCount: 12
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -54954,7 +54958,9 @@ Prefab:
       propertyPath: files.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: e110c8d2207ad394a8a424c6344fe560, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114323989742659186, guid: f8a54f4772db5cc44b14780ca89a70ef, type: 2}
+    - {fileID: 114560764067150390, guid: f8a54f4772db5cc44b14780ca89a70ef, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f8a54f4772db5cc44b14780ca89a70ef, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1603694504 stripped
@@ -57397,7 +57403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1684734608
 RectTransform:
   m_ObjectHideFlags: 0
