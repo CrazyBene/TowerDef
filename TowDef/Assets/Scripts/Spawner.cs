@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour {
 		}
 	}
 
-	private void Start() {
+	private void Awake() {
 		LoadInWaves();
 	}
 

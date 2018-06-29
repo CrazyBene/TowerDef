@@ -23,6 +23,12 @@ public class LevelManager : MonoBehaviour {
 	[SerializeField]
 	private GameObject endGameCanvas;
 
+	[SerializeField]
+	private AudioSource buildSound;
+	
+	[SerializeField]
+	private AudioSource waveSound;
+
 	private GameObject player;
 	
 	private LevelPhase levelPhase = LevelPhase.BuildPhase;
@@ -114,12 +120,18 @@ public class LevelManager : MonoBehaviour {
 		FindObjectOfType<Player>().Money += 50;
 
 		spawnManager.PrepareNextWave(currentWave+1);
+
+		buildSound.Play();
+		waveSound.Stop();
 	}
 
 	private void StartNextWavePhase() {
 		spawnManager.SpawnWave(currentWave);
 		currentWave++;
 		uiManager.NextWave(currentWave, maxWaves);
+
+		buildSound.Stop();
+		waveSound.Play();
 	}
 
 	private void StartEndPhase() {
@@ -135,6 +147,9 @@ public class LevelManager : MonoBehaviour {
 		player.GetComponent<FirstPersonController>().enabled = false;
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
+
+		buildSound.Play();
+		waveSound.Stop();
 	}
 
 }
