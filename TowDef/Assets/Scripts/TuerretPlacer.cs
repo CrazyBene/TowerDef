@@ -50,6 +50,7 @@ public class TuerretPlacer : MonoBehaviour {
 					if(currentTurret == null) {
 						Destroy(currentTurret);
 					} 
+					Destroy(currentTurret);
 					currentTurret = Instantiate(towersToPlace[i].towerPrefab);
 					currentPrefabIndex = i;
 					gun.SetActive(false);

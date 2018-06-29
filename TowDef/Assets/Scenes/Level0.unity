@@ -4979,6 +4979,11 @@ Prefab:
       propertyPath: endGameCanvas
       value: 
       objectReference: {fileID: 409807361}
+    - target: {fileID: 82464841878925408, guid: 7718a2563c1e3e14cac4df36a3b864fd,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7718a2563c1e3e14cac4df36a3b864fd, type: 2}
   m_IsPrefabParent: 0
@@ -8108,49 +8113,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4222852154116136, guid: 32fe7ed4625cfac4aaebbca6f537d140,
     type: 2}
   m_PrefabInternal: {fileID: 1451899189}
---- !u!1 &1457213445 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-  m_PrefabInternal: {fileID: 692247560}
---- !u!114 &1457213446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1457213445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96c4c36251b2f341a591eedf1b6772c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 1928534860588698, guid: db0059d912c4d4b45927eab4e43c22d5,
-    type: 2}
-  towersToPlace:
-  - towerPrefab: {fileID: 1928534860588698, guid: db0059d912c4d4b45927eab4e43c22d5,
-      type: 2}
-    towerCost: 45
-  - towerPrefab: {fileID: 1897186097576814, guid: 443ad6f49ebcd0e468123162fd74d313,
-      type: 2}
-    towerCost: 80
-  gun: {fileID: 0}
-  placableLayers:
-    serializedVersion: 2
-    m_Bits: 2048
---- !u!114 &1457213447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1457213445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1426fbbdde8784120900c1331a56f19e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  money: 100
-  moneyText: {fileID: 1392599666}
-  spawnPoint: {fileID: 791005581}
 --- !u!1001 &1459763624
 Prefab:
   m_ObjectHideFlags: 0
@@ -8556,7 +8518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.19900002}
   m_AnchorMax: {x: 1, y: 0.26900002}
-  m_AnchoredPosition: {x: 2.4, y: -2.1}
+  m_AnchoredPosition: {x: 2.4, y: -2.100006}
   m_SizeDelta: {x: -37.8, y: -4.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1573630171
