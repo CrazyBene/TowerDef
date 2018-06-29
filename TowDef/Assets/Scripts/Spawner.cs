@@ -32,11 +32,7 @@ public class Spawner : MonoBehaviour {
 		}
 	}
 
-	private void Awake() {
-		LoadInWaves();
-	}
-
-	private void LoadInWaves() {
+	public void LoadInWaves() {
 		for(int i = 0; i < files.Length; i++) {
 			var list = new List<EnemyWithTime>();
 

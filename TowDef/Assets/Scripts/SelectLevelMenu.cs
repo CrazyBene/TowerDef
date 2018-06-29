@@ -33,7 +33,7 @@ public class SelectLevelMenu : MonoBehaviour {
 	private void Awake() {
 		maxLevels = scenes.Count;
 
-		maxLevelPlayable = PlayerPrefs.GetInt("maxLevelPlayable", 0);
+		maxLevelPlayable = PlayerPrefs.GetInt("maxLevelPlayable", 1);
 	}
 
 	public void ChangeLevel(int change) {

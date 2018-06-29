@@ -10,12 +10,13 @@ public class SpawnManager : MonoBehaviour {
 	public Dictionary<string, GameObject> stringToEnemyDic = new Dictionary<string, GameObject>();
 
 	private void Awake() {
-		foreach(Spawner spawner in spawners) {
-			spawner.manager = this;
-		}
-
 		foreach(StringToPrefab e in stringToEnemy) {
 			stringToEnemyDic.Add(e.name, e.prefab);
+		}
+
+		foreach(Spawner spawner in spawners) {
+			spawner.manager = this;
+			spawner.LoadInWaves();
 		}
 	}
 
