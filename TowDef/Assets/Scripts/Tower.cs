@@ -32,6 +32,9 @@ public class Tower : MonoBehaviour {
 	[SerializeField]
 	private GameObject bulletPrefab;
 
+	[SerializeField]
+	private AudioSource shotSound;
+
 	public LayerMask layerMask;
 
 	private List<GameObject> enemiesInRange = new List<GameObject>();
@@ -51,10 +54,6 @@ public class Tower : MonoBehaviour {
 		Quaternion lookRotation = Quaternion.LookRotation(dir);
 		Vector3 rotation = Quaternion.Lerp(partToRotate.transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
 		partToRotate.transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-		// Draw a line for testing
-		Debug.DrawRay(firePoint.transform.position, closestEnemy.transform.position - firePoint.transform.position);
-
 
 		if(fireCountdown <= 0f) {
 			Shoot();
@@ -83,6 +82,7 @@ public class Tower : MonoBehaviour {
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 
 		if(bullet != null) {
+			shotSound.Play();
 			bullet.Seek(closestEnemy.transform);
 			bullet.SetDamage(damage);
 		}
